@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var salário = Number(window.prompt('Qual é o seu salário?'))
+        window.confirm(`O seu salário é ${salário.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}. Está correto?`)
+        document.write(`Você recebe: ${salário.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.`)
+    </script>
+</body>
+</html>
