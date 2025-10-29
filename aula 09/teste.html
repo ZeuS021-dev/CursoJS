@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste com DOM</title>
+    <style>
+        body{
+            background-color: rgb(66, 66, 121);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+        <h1>Título da página</h1>
+        <h2>Categoria T</h2>
+        <p id="p1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum ducimus voluptates expedita ipsum nisi aspernatur eum, possimus rem repellat! Provident vitae quibusdam est recusandae eligendi quod adipisci autem sed soluta!</p>
+        <p class="p2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit ut iusto fugit eos provident ducimus optio eius, quisquam expedita nulla, consectetur explicabo. Quam inventore vel quidem at asperiores perferendis beatae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati impedit numquam, atque illo asperiores dolorum possimus sunt nihil? Vero impedit ad necessitatibus dolor odio animi esse fugit dolore est hic.</p>
+        <script>
+            var titulo = document.getElementsByTagName('h1')[0]
+            var subtitulo = document.getElementsByTagName('h2')[0]
+            var paragrafo = document.getElementsByClassName('p.p2')
+            titulo.style.color = 'gray'
+            subtitulo.style.background = 'pink'
+            subtitulo.style.color = 'red'
+            p2.style.background = 'blue'
+        </script>
+</body>
+</html>
