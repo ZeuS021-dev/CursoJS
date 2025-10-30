@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+    <style>
+
+        body{
+            font: normal 1.5em Arial, sans-serif;
+        }
+
+        input{
+            font: normal 1em Arial, sans-serif;
+            width: 150px;
+            padding: 20px;
+        }
+
+        input#bsomar{
+            background-color: rgb(56, 56, 56);
+            color: white;
+        }
+
+        div#res{
+            background-color: rgb(72, 72, 136);
+            color: white;
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 5px;
+            width: 550px;
+        }
+
+    </style>
+</head>
+<body>
+        <h1>Somando Valores :)</h1>
+        <input type="number" name="txtn1" id="txtn1"> +
+        <input type="number" name="txtn2" id="txtn2">
+        <input type="button" value="somar" id="bsomar" onclick="somar()">
+        <div id="res">Resultado</div>
+
+    <script>
+            var bsomar = document.getElementById('bsomar')
+            bsomar.addEventListener('mouseenter' , entrar)
+            bsomar.addEventListener('mouseout' , sair)
+            
+            function somar(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.querySelector('input#txtn2')
+            var res = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var soma = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a: <strong>${soma.toFixed(1).replace('.' , ',')}</strong>.`
+            
+        }
+
+        function entrar(){
+            bsomar.style.background = 'green'
+        }
+
+        function sair(){
+            bsomar.style.background = 'black'
+        }
+
+    </script>
+</body>
+</html>
