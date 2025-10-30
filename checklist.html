@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <style>
+
+        body{
+            background-color: rgb(228, 223, 217);
+            font: normal 1em Arial, sans-serif;
+        }
+
+        h1{
+            background-color: black;
+            color: white;
+            font: bold 2em;
+            text-align: center;
+            width: 455px;
+            padding: 15px;
+        }
+
+        p{
+            font-size: 1.5em;
+            margin-left: 150px;
+            margin-bottom: 45px;
+        }
+
+        input{
+            padding: 10px;
+            width: 460px;
+        }
+
+        input#adicionar{
+            background-color: rgb(37, 37, 37);
+            color: white;
+            width: 484px;
+            padding: 10px;
+            display: block;
+        }
+
+        input#tarefa{
+            text-align: left;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+        <h1>Checklist de tarefas <3</h1>
+        <p>Adicione uma tarefa:</p>
+        <input type="text" id="tarefas">
+        <input type="button" value="Adicionar tarefa" id="adicionar">
+        <input type="checkbox" name="tarefa" id="tarefa">
+
+    <script>
+        
+         var adicionar = document.getElementById('adicionar')
+        adicionar.addEventListener('mouseenter' , entrar)
+        adicionar.addEventListener('mouseout' , sair)
+
+        var tarefas = document.getElementById('tarefas')
+        var tarefa = document.getElementById('tarefa')
+
+        function adicionar(){
+            tarefa.style.display = 'block'
+            tarefas.innerHTML = 'tarefas'
+        }
+
+        function entrar(){
+            adicionar.style.background = 'green'
+        }
+
+        function sair(){
+            adicionar.style.background = 'black'
+        }
+
+    </script>
+</body>
+</html>
