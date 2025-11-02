@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+
+        body{
+            font: 1.5em normal arial, sans-serif;
+        }
+
+        h1{
+            background-color: rgb(110, 55, 55);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        p{
+            font: 1.2em normal arial, sans-serif;
+            margin-left: 15px;
+        }
+
+        input#txtp{
+            padding: 3px;
+            width: 100px;
+        }
+
+        input#verificar{
+            background-color: black;
+            color: white;
+            padding: 4px;
+            width: 80px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Verificação de país! 🌍</h1>
+    <p>Vivendo em: <input type="text" id="txtp"></p>
+    <input type="button" value="Verificar" id="verificar" onclick="verify()">
+    <div id="res">
+
+    </div>
+
+    <script>
+
+        var verificar = document.getElementById('verificar')
+        verificar.addEventListener ('mouseenter' , entrar)
+        verificar.addEventListener('mouseout' , sair)
+        function entrar(){
+            verificar.style.background = 'green'
+        }
+        function sair(){
+            verificar.style.background = 'black'
+        }
+
+        function verify(){
+            var txtp = document.getElementById('txtp')
+
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>Você vive em <strong>${txtp.value}</strong>.</p>`
+            if (txtp.value.toLowerCase() == 'brasil'){
+                res.innerHTML += `<p>Você é <strong>brasileiro</strong>!</p>`
+            } else{
+                res.innerHTML += `<p>Você é <strong>estrangeiro</strong>!</p>`
+            }
+        }
+
+    </script>
+</body>
+</html>
