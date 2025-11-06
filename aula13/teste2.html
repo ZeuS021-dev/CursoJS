@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While e do while - verificador de idade</title>
+</head>
+<body>
+    <script>
+        
+        var idade
+        do {
+            var idade = Number(prompt('Digite sua idade:'))
+            if (idade < 18) {
+                window.alert('Desculpe, você é menor de idade. Acesso negado!')
+            }
+        } while (idade < 18)
+
+        document.write('Você é maior de idade, liberado.')
+
+    </script>
+</body>
+</html>
