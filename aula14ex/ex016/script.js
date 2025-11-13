@@ -14,12 +14,14 @@ function contar() {
     } else {
         res.innerHTML = 'Contando:<br>';
         if (inicioValor < fimValor) {
+            // Contagem crescente
             while (inicioValor <= fimValor) {
                 res.innerHTML += inicioValor + ' 👉 ';
                 inicioValor += passoValor;
             }
         } else {
             while (inicioValor >= fimValor) {
+            // Contagem decrescente
                 res.innerHTML += inicioValor + ' 👉 ';
                 inicioValor -= passoValor;
             }
