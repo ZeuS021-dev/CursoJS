@@ -1,0 +1,54 @@
+ body{
+    height: 100vh;
+    margin: 0;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    background-color: rgb(88, 58, 58);
+}
+
+main{
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+select{
+    width: 135px;
+    height: 25px;
+}
+
+input{
+    padding: 3px;
+    width: 200px;
+}
+
+input#botao{
+    width: 135px;
+    background-color: rgb(53, 184, 53);
+    border-radius: 15px;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(139, 103, 103);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.308);
+    box-sizing: border-box;
+    padding: 10px;
+}
+

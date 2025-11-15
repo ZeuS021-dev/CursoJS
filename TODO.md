@@ -1,0 +1,2 @@
+- [x] Corrigir validação do campo país para comparar o valor correto
+- [x] Corrigir exibição dos dados para usar .value em vez de referências DOM
