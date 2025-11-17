@@ -7,18 +7,37 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1.3em;
     background-color: rgb(88, 58, 58);
+    background-image: url('pexels-justin-hamilton-16109-92248.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 main{
     background-color: #ffffff;
     text-align: center;
     padding: 30px;
-    width: 50%;
+    width: 60%;
     position: absolute;
     right: 0;
     top: 0;
     height: 100vh;
     box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+h1{
+    border-radius: 4px;
+    font-size: 1.5em;
+    background-color: rgb(0, 0, 88);
+    color: white;
+    padding: 15px;
+    
+}
+
+h2{
+    font-size: 1.2em;
 }
 
 select{
@@ -28,7 +47,7 @@ select{
 
 input{
     padding: 3px;
-    width: 200px;
+    width: 190px;
 }
 
 input#botao{
@@ -43,7 +62,6 @@ footer{
     top: 0;
     width: 50%;
     height: 100vh;
-    background-color: rgb(139, 103, 103);
     display: flex;
     align-items: flex-end;
     justify-content: center;
