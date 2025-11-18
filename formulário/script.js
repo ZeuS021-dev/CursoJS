@@ -1,5 +1,3 @@
-const { Children } = require("react")
-
 function validar() {
     let nome = document.getElementById('nome')
     let email = document.getElementById('email')
@@ -32,10 +30,14 @@ function validar() {
         let botaoconfirm = document.createElement('input')
         botaoconfirm.type = 'button'
         botaoconfirm.value = 'Confirmar'
+        botaoconfirm.id = 'confirmar'
+        botaoconfirm.onclick = confirmar
         res.appendChild(botaoconfirm)
         let botaocancel = document.createElement('input')
         botaocancel.type = 'button'
         botaocancel.value = 'Cancelar'
+        botaocancel.id = 'cancelar'
+        botaocancel.onclick = cancelar
         res.appendChild(botaocancel)
         botaoconfirm.style.background = 'white'
         botaocancel.style.background = 'white'
@@ -56,6 +58,16 @@ function validar() {
         botaoconfirm.style.marginBottom = '15px'
         botaocancel.style.marginBottom = '15px'
     }
-    
 
+
+}
+
+function confirmar() {
+    let botaoconfirm = document.getElementById('confirmar')
+    res.innerHTML += '<p>Inscricão realizada com sucesso.</p>'
+}
+
+function cancelar() {
+    let botaocancel = document.getElementById('cancelar')
+    res.innerHTML += '<p>Por favor, edite os dados incorretos inseridos e clique em "Validar Dados".</p>'
 }
