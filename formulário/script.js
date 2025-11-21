@@ -7,26 +7,41 @@ function validar() {
     let padrao = document.getElementById('padrao')
     let res = document.getElementById('res')
 
+    // Limpar mensagens de erro anteriores
+    document.querySelectorAll('.error-msg').forEach(el => el.remove());
+
+    let hasError = false;
+
     if (nome.value.length == 0){
-        alert('[ERRO] Campo "Nome completo" é obrigatório.')
-    } else if (email.value.length == 0) {
-        alert('[ERRO] Campo "E-mail" é obrigatório.')
-    } else if (pais.value == 'Selecione um país...') {
-        alert('[ERRO] Campo "País" é obrigatório.')
-    } else if (num.value.length == 0) {
-        alert('[ERRO] Campo "Número de celular" é obrigatório.')
-    } else if (data.value.length == 0) {
-        alert('[ERRO] Campo "Data de nascimento" é obrigatório.')
-    } else {
-        res.style.marginTop = '20px'
-        res.style.padding = '20px'
-        res.style.borderRadius = '10px'
-        res.style.background = 'black'
-        res.style.color = 'white'
-        res.style.wordWrap = 'break-word'
+        showError('nome', '[ERRO] Campo "Nome completo" é obrigatório.');
+        hasError = true;
+    }
+    if (email.value.length == 0) {
+        showError('email', '[ERRO] Campo "E-mail" é obrigatório.');
+        hasError = true;
+    }
+    if (pais.value == 'Selecione um país...') {
+        showError('pais', '[ERRO] Campo "País" é obrigatório.');
+        hasError = true;
+    }
+    if (num.value.length == 0) {
+        showError('num', '[ERRO] Campo "Número de celular" é obrigatório.');
+        hasError = true;
+    }
+    if (data.value.length == 0) {
+        showError('data', '[ERRO] Campo "Data de nascimento" é obrigatório.');
+        hasError = true;
+    }
+
+    if (!hasError) {
+        // Animação no botão
+        let botao = document.getElementById('botao');
+        botao.classList.add('spin');
+        setTimeout(() => botao.classList.remove('spin'), 500);
+
         res.innerHTML = '<p>Tudo ok!</p>'
         let dataFormatada = new Date(data.value).toLocaleDateString('pt-BR');
-        res.innerHTML += `<p>Seu nome é: ${nome.value} <p>Seu email para contato é: ${email.value}</p> <p>Você mora em: ${pais.value}</p> <p>Seu número para contato é: ${num.value}</p> <p>Sua data de nascimento é: ${dataFormatada}.</p></p>`
+        res.innerHTML += `<p>Seu nome é: ${nome.value}</p><p>Seu email para contato é: ${email.value}</p><p>Você mora em: ${pais.value}</p><p>Seu número para contato é: ${num.value}</p><p>Sua data de nascimento é: ${dataFormatada}.</p>`
         let botaoconfirm = document.createElement('input')
         botaoconfirm.type = 'button'
         botaoconfirm.value = 'Confirmar'
@@ -39,12 +54,6 @@ function validar() {
         botaocancel.id = 'cancelar'
         botaocancel.onclick = cancelar
         res.appendChild(botaocancel)
-        botaoconfirm.style.background = 'white'
-        botaocancel.style.background = 'white'
-        botaoconfirm.style.width = '145px'
-        botaocancel.style.width = '145px'
-        botaoconfirm.style.alignItems = 'center'
-        botaocancel.style.alignItems = 'center'
         botaoconfirm.style.background = 'rgb(53, 184, 53)'
         botaocancel.style.background = 'red'
         botaoconfirm.style.color = 'white'
@@ -57,9 +66,22 @@ function validar() {
         botaocancel.style.marginRight = '17px'
         botaoconfirm.style.marginBottom = '15px'
         botaocancel.style.marginBottom = '15px'
+        botaoconfirm.style.width = '145px'
+        botaocancel.style.width = '145px'
+
+        // Mostrar #res com animação
+        res.classList.add('show');
     }
+}
 
-
+function showError(fieldId, message) {
+    let field = document.getElementById(fieldId);
+    let errorSpan = document.createElement('span');
+    errorSpan.className = 'error-msg';
+    errorSpan.style.color = 'red';
+    errorSpan.style.fontSize = '0.9em';
+    errorSpan.innerText = message;
+    field.parentNode.appendChild(errorSpan);
 }
 
 function confirmar() {
