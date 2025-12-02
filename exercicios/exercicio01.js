@@ -87,3 +87,31 @@ function montante(capital, tempo, taxa) {
 
 montante(prompt ('Digite o capital inicial:'), prompt('Digite o tempo de investimento (em meses):'), prompt('Digite a taxa de juros mensal:'))
 */
+
+const estoque = {
+  arroz: 2,
+  feijao: 2,
+  leite: 0,
+  macarrao: 5,
+  cafe: 0,
+  farinha: 0,
+};
+
+function emFalta() {
+  const faltando = [];
+
+  for (const produto in estoque){
+    if (estoque[produto] == 0) {
+      faltando.push(produto)
+    }
+  }
+
+  if (faltando.length === 0) {
+    console.log("Nenhum produto em falta.");
+  } else {
+    console.log(`Produtos em falta: ${faltando}.`)
+  }
+  return console.log(faltando)
+}
+
+emFalta()
