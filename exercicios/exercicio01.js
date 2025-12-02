@@ -34,13 +34,56 @@ function area() {
 area()
 */
 
+/*
 function inverterNum(num) {
-    let inverso = 0;
-    while (num != 0) {
-        inverso = inverso * 10;
-        inverso = inverso + num % 10;
-        num = Math.trunc(num/10);}
-        return inverso
+  let inverso = 0;
+  while (num != 0) {
+    inverso = inverso * 10;
+    inverso = inverso + (num % 10);
+    num = Math.trunc(num / 10);
+  }
+  return document.writeln(inverso);
 }
 
-document.write(inverterNum(287));
+inverterNum(prompt("Digite um número:"));
+*/
+
+/*
+function estaEndividado(receita, gastos) {
+  if (receita > gastos) {
+    return "Está no AZUL!";
+  } else {
+    return "Está no VERMELHO!";
+  }
+}
+
+let maria = estaEndividado(2000, 3500);
+let joao = estaEndividado(5000, 4500);
+
+console.log(maria);
+console.log(joao);
+*/
+
+/*
+function contaVogais(texto) {
+    var cont = 0;
+    texto=texto.toLowerCase();
+    for(var i=0; i<texto.length; i++){
+        if(texto.charAt(i)=="a"||texto.charAt(i)=="e"||texto.charAt(i)=="i"||texto.charAt(i)=="o"||texto.charAt(i)=="u"){
+            cont++; //Incrementa a contagem de vogais
+        }
+    }
+    return document.writeln(`A palavra '${texto}' tem ${cont} vogais.`);
+}
+
+contaVogais(prompt('Digite uma palavra:'))
+*/
+
+/*
+function montante(capital, tempo, taxa) {
+    const retorno = capital * (1 + Number(taxa)) ** tempo
+    return document.write(`R$${retorno.toFixed(2)}`)
+}
+
+montante(prompt ('Digite o capital inicial:'), prompt('Digite o tempo de investimento (em meses):'), prompt('Digite a taxa de juros mensal:'))
+*/
